@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkanfxmfs0e3"]
+
+[ext_resource type="PackedScene" uid="uid://b5e2mr6w05bgu" path="res://utileria/pared.tscn" id="1_wrbek"]
+[ext_resource type="PackedScene" uid="uid://baiiyxxxi0wxp" path="res://jugador/jugador.tscn" id="2_h06de"]
+
+[node name="Nivel" type="Node2D"]
+
+[node name="Pared" parent="." instance=ExtResource("1_wrbek")]
+position = Vector2(-6, 0)
+scale = Vector2(-0.2335997, 0.25974143)
+
+[node name="Jugador" parent="." instance=ExtResource("2_h06de")]
+position = Vector2(-10, -19)
+
+[node name="Pared2" parent="." instance=ExtResource("1_wrbek")]
+position = Vector2(170, 1)
+
+[node name="Pared3" parent="." instance=ExtResource("1_wrbek")]
+position = Vector2(-190, -29)
+
+[node name="Pared4" parent="." instance=ExtResource("1_wrbek")]
+position = Vector2(42, -108)
+
+[node name="Pared5" parent="." instance=ExtResource("1_wrbek")]
+position = Vector2(-289, -128)
+rotation = 1.5707964
+
+[node name="Pared6" parent="." instance=ExtResource("1_wrbek")]
+position = Vector2(54, -131)
+rotation = 1.5707964
+scale = Vector2(0.19999939, 1)
