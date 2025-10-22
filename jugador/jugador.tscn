@@ -17,3 +17,8 @@ position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_5vouv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TemporizadorPowerupSalto" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="TemporizadorPowerupSalto" to="." method="_on_temporizador_powerup_salto_timeout"]
