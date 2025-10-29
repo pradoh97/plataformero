@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cv7r8gunl7fpq"]
+[gd_scene load_steps=8 format=3 uid="uid://cv7r8gunl7fpq"]
 
 [ext_resource type="PackedScene" uid="uid://dqtxssnmtbypu" path="res://jugador/jugador.tscn" id="1_h06de"]
 [ext_resource type="Script" uid="uid://ke1t533heoor" path="res://nivel.gd" id="1_j87l1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dy3wtkt1rn618" path="res://utileria/moneda.tscn" id="3_7gdj4"]
 [ext_resource type="PackedScene" uid="uid://dmmt47uwdd02" path="res://utileria/gema.tscn" id="5_ymy7k"]
 [ext_resource type="PackedScene" uid="uid://c012pi50ly262" path="res://jugador/powerups/salto.tscn" id="6_vttml"]
+[ext_resource type="PackedScene" uid="uid://c8ccx452pu8sh" path="res://utileria/pinche.tscn" id="7_6apml"]
 
 [node name="Nivel" type="Node2D"]
 script = ExtResource("1_j87l1")
@@ -37,16 +38,24 @@ position = Vector2(361, -94)
 position = Vector2(752, -53)
 
 [node name="Gema" parent="." instance=ExtResource("5_ymy7k")]
-position = Vector2(-175, -256)
+position = Vector2(-175, -91)
 
 [node name="Salto" parent="." instance=ExtResource("6_vttml")]
-position = Vector2(88, 12)
+position = Vector2(88, 13)
 
 [node name="Salto2" parent="." instance=ExtResource("6_vttml")]
 position = Vector2(514, -64)
+
+[node name="Pinche" parent="." instance=ExtResource("7_6apml")]
+position = Vector2(-174, 42)
+
+[node name="Pinche2" parent="." instance=ExtResource("7_6apml")]
+position = Vector2(-54, 42)
 
 [connection signal="body_entered" from="Moneda" to="." method="_on_moneda_body_entered"]
 [connection signal="body_entered" from="Moneda2" to="." method="_on_moneda_body_entered"]
 [connection signal="body_entered" from="Gema" to="." method="_on_gema_body_entered"]
 [connection signal="body_entered" from="Salto" to="Jugador" method="_on_salto_body_entered"]
 [connection signal="body_entered" from="Salto2" to="Jugador" method="_on_salto_body_entered"]
+[connection signal="body_entered" from="Pinche" to="Jugador" method="_on_pinche_body_entered"]
+[connection signal="body_entered" from="Pinche2" to="Jugador" method="_on_pinche_body_entered"]

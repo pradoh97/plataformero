@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var modificador_salto = 1
+var vidas = 2
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -33,3 +34,10 @@ func _on_salto_body_entered(body: Node2D) -> void:
 
 func _on_temporizador_powerup_salto_timeout() -> void:
 	modificador_salto = 1
+
+
+func _on_pinche_body_entered(body: Node2D) -> void:
+	if body == self:
+		vidas = vidas - 1
+	if vidas == 0:
+		get_tree().quit()
